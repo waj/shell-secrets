@@ -1,7 +1,7 @@
 #!/bin/sh
 
 login() {
-  ($(gpg -q --decrypt ~/.shell-secrets/$1.gpg) ; SECRET_LOGIN="$SECRET_LOGIN$1 " bash -l)
+  ($(gpg -q --decrypt ~/.shell-secrets/$1.gpg) && SECRET_LOGIN="$SECRET_LOGIN$1 " bash -l)
 }
 
 _login() {
